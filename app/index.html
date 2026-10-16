@@ -1,0 +1,1011 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eixo · Protótipo do app</title>
+<meta name="description" content="O app do método Eixo: oito eixos, plano do ciclo, equipe entre as consultas.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#142420">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Eixo">
+<meta property="og:title" content="Eixo · Protótipo do app">
+<meta property="og:description" content="O app do método Eixo: oito eixos, plano do ciclo, equipe entre as consultas.">
+<meta property="og:image" content="https://eixo.club/assets/og.png">
+<meta property="og:url" content="https://eixo.club/app/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+/* PaginaApp */
+body{margin:0;background:#0b1311}
+@media (max-width:440px){.ph-live{zoom:0.84}}
+/* AppEixo */
+
+body{margin:0}
+.scr{scrollbar-width:none}
+.scr::-webkit-scrollbar{display:none}
+
+</style>
+</head>
+<body>
+<div id="eixo-root"></div>
+<template id="dc-tpl-PaginaApp">
+<div style="min-height: 100vh; background: #0b1311; color: #efeae0; font-family: 'Geist', system-ui, sans-serif; display: flex; flex-direction: column; align-items: center; gap: 28px; padding: 32px 16px 48px; box-sizing: border-box;">
+<div style="width: 100%; max-width: 980px; display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap;">
+<a href="../" style="color: #efeae0; text-decoration: none; font-family: 'Newsreader', Georgia, serif; font-size: 32px; line-height: 34px;">Eixo</a>
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #a9b3ad;">protótipo do app · dados de demonstração</span>
+</div>
+<div class="ph-live" style="border-radius: 46px; padding: 10px; background: #142420; box-shadow: 0 50px 90px -40px rgba(0,0,0,0.8);">
+<div style="border-radius: 36px; overflow: hidden; width: 390px; height: 844px;">
+<dc-import name="AppEixo" screen="welcome" hint-size="390px,844px"></dc-import>
+</div>
+</div>
+<a href="../" style="color: #7fb3a0; min-height: 44px; display: inline-flex; align-items: center;">Conhecer o método Eixo</a>
+</div></template>
+<template id="dc-tpl-AppEixo">
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #0f1a17; color: #efeae0; font-family: 'Geist', system-ui, sans-serif; font-size: 15px; line-height: 22px; display: flex; flex-direction: column; overflow: hidden;">
+
+<!-- ============ BOAS-VINDAS ============ -->
+<sc-if value="{{isWelcome}}" hint-placeholder-val="{{ false }}">
+<div class="scr" style="flex: 1 1 auto; min-height: 0; overflow-y: auto; padding: 56px 24px 32px; display: flex; flex-direction: column; gap: 8px;">
+<div style="display: flex; align-items: baseline; justify-content: space-between;">
+<span style="font-family: 'Newsreader', Georgia, serif; font-size: 36px; line-height: 36px; letter-spacing: -0.02em;">Eixo</span>
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; color: #a9b3ad;">eixo.club</span>
+</div>
+<div style="margin: 0 -26px; padding: 24px 0 0;">
+<div style="position: relative; container-type: inline-size;">
+<svg viewBox="0 0 340 290" width="100%" role="img" aria-label="Gráfico radar dos oito eixos: hormonal, energia, sono, alimentação, corpo, mente, conexões e hábitos" style="display:block;overflow:visible;">
+<polygon points="170.0,62.0 232.2,87.8 258.0,150.0 232.2,212.2 170.0,238.0 107.8,212.2 82.0,150.0 107.8,87.8" fill="none" stroke="#2e3e37" stroke-width="1"></polygon>
+<polygon points="170.0,84.0 216.7,103.3 236.0,150.0 216.7,196.7 170.0,216.0 123.3,196.7 104.0,150.0 123.3,103.3" fill="none" stroke="#2e3e37" stroke-width="1"></polygon>
+<polygon points="170.0,106.0 201.1,118.9 214.0,150.0 201.1,181.1 170.0,194.0 138.9,181.1 126.0,150.0 138.9,118.9" fill="none" stroke="#2e3e37" stroke-width="1"></polygon>
+<polygon points="170.0,128.0 185.6,134.4 192.0,150.0 185.6,165.6 170.0,172.0 154.4,165.6 148.0,150.0 154.4,134.4" fill="none" stroke="#2e3e37" stroke-width="1"></polygon>
+<line x1="170" y1="150" x2="170.0" y2="62.0" stroke="#2e3e37" stroke-width="1"></line>
+<line x1="170" y1="150" x2="232.2" y2="87.8" stroke="#2e3e37" stroke-width="1"></line>
+<line x1="170" y1="150" x2="258.0" y2="150.0" stroke="#2e3e37" stroke-width="1"></line>
+<line x1="170" y1="150" x2="232.2" y2="212.2" stroke="#2e3e37" stroke-width="1"></line>
+<line x1="170" y1="150" x2="170.0" y2="238.0" stroke="#2e3e37" stroke-width="1"></line>
+<line x1="170" y1="150" x2="107.8" y2="212.2" stroke="#2e3e37" stroke-width="1"></line>
+<line x1="170" y1="150" x2="82.0" y2="150.0" stroke="#2e3e37" stroke-width="1"></line>
+<line x1="170" y1="150" x2="107.8" y2="87.8" stroke="#2e3e37" stroke-width="1"></line>
+<g style="{{radarG}}">
+<polygon points="{{radarPts}}" fill="rgba(127,179,160,0.24)" stroke="#7fb3a0" stroke-width="2" stroke-linejoin="round"></polygon>
+<circle cx="{{d0x}}" cy="{{d0y}}" r="{{d0r}}" fill="{{d0f}}"></circle>
+<circle cx="{{d1x}}" cy="{{d1y}}" r="{{d1r}}" fill="{{d1f}}"></circle>
+<circle cx="{{d2x}}" cy="{{d2y}}" r="{{d2r}}" fill="{{d2f}}"></circle>
+<circle cx="{{d3x}}" cy="{{d3y}}" r="{{d3r}}" fill="{{d3f}}"></circle>
+<circle cx="{{d4x}}" cy="{{d4y}}" r="{{d4r}}" fill="{{d4f}}"></circle>
+<circle cx="{{d5x}}" cy="{{d5y}}" r="{{d5r}}" fill="{{d5f}}"></circle>
+<circle cx="{{d6x}}" cy="{{d6y}}" r="{{d6r}}" fill="{{d6f}}"></circle>
+<circle cx="{{d7x}}" cy="{{d7y}}" r="{{d7r}}" fill="{{d7f}}"></circle>
+</g>
+<text x="170.0" y="52.0" text-anchor="middle" fill="{{l0}}" font-size="10.5" letter-spacing="1.2" font-weight="600" font-family="Geist, system-ui, sans-serif">HORMONAL</text>
+<text x="242.2" y="87.4" text-anchor="start" fill="{{l1}}" font-size="10.5" letter-spacing="1.2" font-weight="600" font-family="Geist, system-ui, sans-serif">ENERGIA</text>
+<text x="268.0" y="153.7" text-anchor="start" fill="{{l2}}" font-size="10.5" letter-spacing="1.2" font-weight="600" font-family="Geist, system-ui, sans-serif">SONO</text>
+<text x="242.2" y="219.9" text-anchor="start" fill="{{l3}}" font-size="10.5" letter-spacing="1.2" font-weight="600" font-family="Geist, system-ui, sans-serif">ALIMENTAÇÃO</text>
+<text x="170.0" y="255.3" text-anchor="middle" fill="{{l4}}" font-size="10.5" letter-spacing="1.2" font-weight="600" font-family="Geist, system-ui, sans-serif">CORPO</text>
+<text x="97.8" y="219.9" text-anchor="end" fill="{{l5}}" font-size="10.5" letter-spacing="1.2" font-weight="600" font-family="Geist, system-ui, sans-serif">MENTE</text>
+<text x="72.0" y="153.7" text-anchor="end" fill="{{l6}}" font-size="10.5" letter-spacing="1.2" font-weight="600" font-family="Geist, system-ui, sans-serif">CONEXÕES</text>
+<text x="97.8" y="87.4" text-anchor="end" fill="{{l7}}" font-size="10.5" letter-spacing="1.2" font-weight="600" font-family="Geist, system-ui, sans-serif">HÁBITOS</text>
+</svg>
+</div>
+</div>
+<div style="margin-top: auto; display: flex; flex-direction: column; gap: 14px; padding-top: 16px;">
+<h1 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 400; font-size: 46px; line-height: 48px; letter-spacing: -0.02em;">Entre no <em style="font-style: italic; color: #e9a676;">eixo.</em></h1>
+<p style="margin: 0; font-size: 16px; line-height: 24px; color: #a9b3ad;">Um método, não mais uma consulta. App, equipe e médico com você entre as consultas.</p>
+<button onClick="{{goGoals}}" style="min-height: 52px; border-radius: 999px; border: 0; background: #7fb3a0; color: #0f1a17; font-family: inherit; font-size: 16px; font-weight: 600; cursor: pointer;">Começar</button>
+<button onClick="{{goHoje}}" style="min-height: 44px; border: 0; background: transparent; color: #a9b3ad; font-family: inherit; font-size: 14px; cursor: pointer;">Já tenho conta</button>
+</div>
+</div>
+</sc-if>
+
+<!-- ============ OBJETIVOS ============ -->
+<sc-if value="{{isGoals}}" hint-placeholder-val="{{ false }}">
+<div class="scr" style="flex: 1 1 auto; min-height: 0; overflow-y: auto; padding: 56px 20px 36px; display: flex; flex-direction: column; gap: 20px;">
+<div style="display: flex; align-items: center; gap: 12px;">
+<button onClick="{{goWelcome}}" aria-label="Voltar" style="flex: 0 0 auto; width: 44px; height: 44px; border-radius: 999px; border: 1px solid #2e3e37; background: #18261f; color: #efeae0; display: flex; align-items: center; justify-content: center; padding: 0; cursor: pointer;">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg>
+</button>
+<div style="flex: 1 1 auto; display: flex; flex-direction: column; gap: 6px;">
+<div style="display: flex; justify-content: space-between; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; color: #a9b3ad;"><span>Seus objetivos</span><span>1 de 2</span></div>
+<div style="height: 4px; border-radius: 999px; background: #20302a; overflow: hidden;"><div style="width: 50%; height: 4px; background: #7fb3a0;"></div></div>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<h1 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 400; font-size: 34px; line-height: 40px; letter-spacing: -0.01em;">O que você quer melhorar?</h1>
+<p style="margin: 0; color: #a9b3ad;">Escolha quantos quiser. Você ajusta depois.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px;">
+<sc-for list="{{goals}}" as="g" hint-placeholder-count="10">
+<button onClick="{{g.toggle}}" aria-pressed="{{g.pressed}}" style="{{g.style}}">
+<span style="{{g.dot}}"></span>
+<span>{{g.label}}</span>
+</button>
+</sc-for>
+</div>
+<div style="margin-top: auto; display: flex; flex-direction: column; gap: 12px;">
+<div style="display: flex; gap: 10px; padding: 12px; border-radius: 4px; background: #1d3a32; font-size: 13px; line-height: 18px; color: #efeae0;">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true" style="flex: 0 0 auto;"><rect x="4" y="10" width="16" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg>
+<span>Dados de saúde são sensíveis pela LGPD. Só você e a equipe médica têm acesso.</span>
+</div>
+<button onClick="{{goHoje}}" style="min-height: 52px; border-radius: 999px; border: 0; background: #7fb3a0; color: #0f1a17; font-family: inherit; font-size: 16px; font-weight: 600; cursor: pointer;">Montar meu eixo · {{goalCount}}</button>
+</div>
+</div>
+</sc-if>
+
+<!-- ============ HOJE ============ -->
+<sc-if value="{{isHoje}}" hint-placeholder-val="{{ true }}">
+<div class="scr" style="flex: 1 1 auto; min-height: 0; overflow-y: auto; padding: 56px 20px 20px; display: flex; flex-direction: column; gap: 16px;">
+<div style="display: flex; justify-content: space-between; align-items: flex-start;">
+<div style="display: flex; flex-direction: column; gap: 2px;">
+<span style="font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; color: #e9a676;">CICLO 2 · SEMANA 5 DE 12</span>
+<h1 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 400; font-size: 30px; line-height: 36px; letter-spacing: -0.01em;">Bom dia, Rafael</h1>
+</div>
+<button aria-label="Seu perfil" style="flex: 0 0 auto; width: 44px; height: 44px; border-radius: 999px; border: 1px solid #2e3e37; background: #18261f; color: #7fb3a0; font-family: 'Newsreader', Georgia, serif; font-size: 20px; padding: 0; cursor: pointer;">R</button>
+</div>
+
+<div style="background: #18261f; border: 1px solid #2e3e37; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px;">
+<div style="display: flex; justify-content: space-between; align-items: baseline;">
+<span style="font-weight: 600;">Seus oito eixos</span>
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; color: #a9b3ad;">dados de demonstração</span>
+</div>
+<div style="padding: 0 6px;">
+<div style="position: relative; container-type: inline-size;">
+<svg viewBox="0 0 340 290" width="100%" role="img" aria-label="Gráfico radar dos oito eixos: hormonal, energia, sono, alimentação, corpo, mente, conexões e hábitos" style="display:block;overflow:visible;">
+<polygon points="170.0,62.0 232.2,87.8 258.0,150.0 232.2,212.2 170.0,238.0 107.8,212.2 82.0,150.0 107.8,87.8" fill="none" stroke="#2e3e37" stroke-width="1"></polygon>
+<polygon points="170.0,84.0 216.7,103.3 236.0,150.0 216.7,196.7 170.0,216.0 123.3,196.7 104.0,150.0 123.3,103.3" fill="none" stroke="#2e3e37" stroke-width="1"></polygon>
+<polygon points="170.0,106.0 201.1,118.9 214.0,150.0 201.1,181.1 170.0,194.0 138.9,181.1 126.0,150.0 138.9,118.9" fill="none" stroke="#2e3e37" stroke-width="1"></polygon>
+<polygon points="170.0,128.0 185.6,134.4 192.0,150.0 185.6,165.6 170.0,172.0 154.4,165.6 148.0,150.0 154.4,134.4" fill="none" stroke="#2e3e37" stroke-width="1"></polygon>
+<line x1="170" y1="150" x2="170.0" y2="62.0" stroke="#2e3e37" stroke-width="1"></line>
+<line x1="170" y1="150" x2="232.2" y2="87.8" stroke="#2e3e37" stroke-width="1"></line>
+<line x1="170" y1="150" x2="258.0" y2="150.0" stroke="#2e3e37" stroke-width="1"></line>
+<line x1="170" y1="150" x2="232.2" y2="212.2" stroke="#2e3e37" stroke-width="1"></line>
+<line x1="170" y1="150" x2="170.0" y2="238.0" stroke="#2e3e37" stroke-width="1"></line>
+<line x1="170" y1="150" x2="107.8" y2="212.2" stroke="#2e3e37" stroke-width="1"></line>
+<line x1="170" y1="150" x2="82.0" y2="150.0" stroke="#2e3e37" stroke-width="1"></line>
+<line x1="170" y1="150" x2="107.8" y2="87.8" stroke="#2e3e37" stroke-width="1"></line>
+<g style="{{radarG}}">
+<polygon points="{{radarPts}}" fill="rgba(127,179,160,0.24)" stroke="#7fb3a0" stroke-width="2" stroke-linejoin="round"></polygon>
+<circle cx="{{d0x}}" cy="{{d0y}}" r="{{d0r}}" fill="{{d0f}}"></circle>
+<circle cx="{{d1x}}" cy="{{d1y}}" r="{{d1r}}" fill="{{d1f}}"></circle>
+<circle cx="{{d2x}}" cy="{{d2y}}" r="{{d2r}}" fill="{{d2f}}"></circle>
+<circle cx="{{d3x}}" cy="{{d3y}}" r="{{d3r}}" fill="{{d3f}}"></circle>
+<circle cx="{{d4x}}" cy="{{d4y}}" r="{{d4r}}" fill="{{d4f}}"></circle>
+<circle cx="{{d5x}}" cy="{{d5y}}" r="{{d5r}}" fill="{{d5f}}"></circle>
+<circle cx="{{d6x}}" cy="{{d6y}}" r="{{d6r}}" fill="{{d6f}}"></circle>
+<circle cx="{{d7x}}" cy="{{d7y}}" r="{{d7r}}" fill="{{d7f}}"></circle>
+</g>
+<text x="170.0" y="52.0" text-anchor="middle" fill="{{l0}}" font-size="10.5" letter-spacing="1.2" font-weight="600" font-family="Geist, system-ui, sans-serif">HORMONAL</text>
+<text x="242.2" y="87.4" text-anchor="start" fill="{{l1}}" font-size="10.5" letter-spacing="1.2" font-weight="600" font-family="Geist, system-ui, sans-serif">ENERGIA</text>
+<text x="268.0" y="153.7" text-anchor="start" fill="{{l2}}" font-size="10.5" letter-spacing="1.2" font-weight="600" font-family="Geist, system-ui, sans-serif">SONO</text>
+<text x="242.2" y="219.9" text-anchor="start" fill="{{l3}}" font-size="10.5" letter-spacing="1.2" font-weight="600" font-family="Geist, system-ui, sans-serif">ALIMENTAÇÃO</text>
+<text x="170.0" y="255.3" text-anchor="middle" fill="{{l4}}" font-size="10.5" letter-spacing="1.2" font-weight="600" font-family="Geist, system-ui, sans-serif">CORPO</text>
+<text x="97.8" y="219.9" text-anchor="end" fill="{{l5}}" font-size="10.5" letter-spacing="1.2" font-weight="600" font-family="Geist, system-ui, sans-serif">MENTE</text>
+<text x="72.0" y="153.7" text-anchor="end" fill="{{l6}}" font-size="10.5" letter-spacing="1.2" font-weight="600" font-family="Geist, system-ui, sans-serif">CONEXÕES</text>
+<text x="97.8" y="87.4" text-anchor="end" fill="{{l7}}" font-size="10.5" letter-spacing="1.2" font-weight="600" font-family="Geist, system-ui, sans-serif">HÁBITOS</text>
+</svg>
+<div style="position: absolute; left: 50.00%; top: 51.72%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 2px; pointer-events: none; text-align: center;">
+<span style="font-family: 'Geist', system-ui, sans-serif; font-size: 10px; line-height: 12px; font-weight: 600; letter-spacing: 0.14em; color: #a9b3ad;">ÍNDICE EIXO</span>
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 34px; line-height: 38px; color: #efeae0;">{{index}}</span>
+</div>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px;">
+<sc-for list="{{axes}}" as="a" hint-placeholder-count="8">
+<button onClick="{{a.pick}}" aria-pressed="{{a.pressed}}" style="{{a.style}}">
+<span style="font-size: 12px; line-height: 16px;">{{a.name}}</span>
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 17px; line-height: 22px;">{{a.score}}</span>
+</button>
+</sc-for>
+</div>
+</div>
+
+<div style="background: #18261f; border: 1px solid #2e3e37; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 14px;">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px;">
+<span style="font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; color: #e9a676;">PLANO DO CICLO</span>
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; color: #a9b3ad;">3 prioridades, não 30</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px;">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px;"><span style="font-weight: 500;">Dormir 7h30</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; line-height: 18px; color: #7fb3a0;">5/7</span></div>
+<span style="display: block; height: 6px; border-radius: 999px; background: #20302a; overflow: hidden;"><span style="display: block; width: 71%; height: 6px; border-radius: 999px; background: #7fb3a0;"></span></span>
+<span style="font-size: 13px; line-height: 18px; color: #a9b3ad;">Sono · 5 de 7 noites nesta semana</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px;">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px;"><span style="font-weight: 500;">Álcool só no fim de semana</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; line-height: 18px; color: #e9a676;">5/5</span></div>
+<span style="display: block; height: 6px; border-radius: 999px; background: #20302a; overflow: hidden;"><span style="display: block; width: 100%; height: 6px; border-radius: 999px; background: #e9a676;"></span></span>
+<span style="font-size: 13px; line-height: 18px; color: #a9b3ad;">Hábitos · semana cumprida</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px;">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px;"><span style="font-weight: 500;">Treinar 3 vezes</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; line-height: 18px; color: #7fb3a0;">2/3</span></div>
+<span style="display: block; height: 6px; border-radius: 999px; background: #20302a; overflow: hidden;"><span style="display: block; width: 67%; height: 6px; border-radius: 999px; background: #7fb3a0;"></span></span>
+<span style="font-size: 13px; line-height: 18px; color: #a9b3ad;">Corpo · falta 1 treino até domingo</span>
+</div>
+<span style="padding-top: 10px; border-top: 1px solid #2e3e37; font-size: 13px; line-height: 18px; color: #a9b3ad;">Definido com Dr. Lucas e Marina em 12 set. Revisão completa no dia 90.</span>
+</div>
+
+<div style="background: #1d3a32; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px;">
+<div style="display: flex; align-items: center; gap: 10px;">
+<span style="flex: 0 0 auto; width: 36px; height: 36px; border-radius: 999px; background: #e9a676; color: #0f1a17; display: flex; align-items: center; justify-content: center; font-family: 'Newsreader', Georgia, serif; font-size: 17px;">M</span>
+<span style="flex: 1 1 auto; display: flex; flex-direction: column;"><span style="font-weight: 600;">Marina · health coach</span><span style="font-size: 12px; line-height: 16px; color: rgba(239, 234, 224, 0.8);">sua equipe · há 2 h</span></span>
+</div>
+<span style="color: #efeae0;">Rafael, nas noites sem álcool você dormiu 41 min a mais. Vamos manter a meta do fim de semana?</span>
+<div style="display: flex; align-items: center; gap: 8px; font-size: 13px; line-height: 18px; color: rgba(239, 234, 224, 0.85);"><span style="width: 8px; height: 8px; border-radius: 999px; background: #7fc4a0;"></span>Dr. Lucas revisou seus dados ontem</div>
+<button onClick="{{goCuidado}}" style="align-self: flex-start; min-height: 44px; padding: 0 18px; border-radius: 999px; border: 0; background: #efeae0; color: #0f1a17; font-family: inherit; font-size: 15px; font-weight: 500; cursor: pointer;">Responder</button>
+</div>
+
+<div style="background: #18261f; border: 1px solid #2e3e37; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 8px;">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px;">
+<span style="font-weight: 600; font-size: 17px; line-height: 24px;">{{sel.name}}</span>
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; color: #7fc4a0;">{{sel.delta}}</span>
+</div>
+<span style="color: #a9b3ad;">{{sel.text}}</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 10px;">
+<span style="font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; color: #e9a676;">PARA HOJE</span>
+<button onClick="{{goMente}}" style="width: 100%; min-height: 64px; display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 12px; border: 1px solid #2e3e37; background: #18261f; color: #efeae0; font-family: inherit; text-align: left; cursor: pointer;">
+<span style="flex: 0 0 auto; width: 40px; height: 40px; border-radius: 999px; background: #1d3a32; color: #7fb3a0; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4L7 17M17 7l1.4-1.4"></path></svg></span>
+<span style="flex: 1 1 auto; display: flex; flex-direction: column;"><span style="font-weight: 500;">Check-in da manhã</span><span style="font-size: 13px; line-height: 18px; color: #a9b3ad;">3 perguntas · 2 min</span></span>
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a9b3ad" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg>
+</button>
+<button onClick="{{goTreino}}" style="width: 100%; min-height: 64px; display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 12px; border: 1px solid #2e3e37; background: #18261f; color: #efeae0; font-family: inherit; text-align: left; cursor: pointer;">
+<span style="flex: 0 0 auto; width: 40px; height: 40px; border-radius: 999px; background: #1d3a32; color: #7fb3a0; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"></path></svg></span>
+<span style="flex: 1 1 auto; display: flex; flex-direction: column;"><span style="font-weight: 500;">Corrida leve · 6 km</span><span style="font-size: 13px; line-height: 18px; color: #a9b3ad;">Treino do plano · zona 2</span></span>
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a9b3ad" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg>
+</button>
+<div style="width: 100%; box-sizing: border-box; min-height: 64px; display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 12px; border: 1px solid #2e3e37; background: #18261f;">
+<span style="flex: 0 0 auto; width: 40px; height: 40px; border-radius: 999px; background: #1d3a32; color: #7fb3a0; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M5.6 5.6l12.8 12.8"></path></svg></span>
+<span style="flex: 1 1 auto; display: flex; flex-direction: column; gap: 6px;">
+<span style="display: flex; justify-content: space-between; align-items: baseline;"><span style="font-weight: 500;">12 dias sem álcool</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; color: #a9b3ad;">meta 30</span></span>
+<span style="display: block; height: 4px; border-radius: 999px; background: #20302a; overflow: hidden;"><span style="display: block; width: 40%; height: 4px; background: #7fb3a0;"></span></span>
+</span>
+</div>
+</div>
+
+<div style="padding: 16px; border-radius: 12px; background: #1d3a32; display: flex; flex-direction: column; gap: 10px;">
+<span style="font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; color: #e9a676;">PRÓXIMO PASSO</span>
+<span style="font-size: 18px; line-height: 24px; font-weight: 600;">Exame de controle em 9 dias</span>
+<span style="color: rgba(239, 234, 224, 0.85);">O pedido já está no app. Faça em qualquer laboratório.</span>
+<button onClick="{{goCuidado}}" style="align-self: flex-start; min-height: 44px; padding: 0 18px; border-radius: 999px; border: 0; background: #efeae0; color: #0f1a17; font-family: inherit; font-size: 15px; font-weight: 500; cursor: pointer;">Ver pedido</button>
+</div>
+<button onClick="{{goRetomada}}" style="min-height: 48px; border-radius: 12px; border: 1px dashed #6c7a73; background: transparent; color: #a9b3ad; font-family: inherit; font-size: 14px; cursor: pointer;">E quando a semana desanda? Veja como o Eixo reage</button>
+</div>
+</sc-if>
+
+<!-- ============ RETOMADA ============ -->
+<sc-if value="{{isRetomada}}" hint-placeholder-val="{{ false }}">
+<div class="scr" style="flex: 1 1 auto; min-height: 0; overflow-y: auto; padding: 56px 20px 20px; display: flex; flex-direction: column; gap: 16px;">
+<div style="display: flex; flex-direction: column; gap: 2px;">
+<span style="font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; color: #e9a676;">CICLO 2 · SEMANA 7 DE 12</span>
+<h1 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 400; font-size: 30px; line-height: 36px; letter-spacing: -0.01em;">Semana difícil, Rafael.</h1>
+</div>
+
+<div style="background: #18261f; border: 1px solid #2e3e37; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px; border-color: #6b4a33;">
+<div style="display: flex; justify-content: space-between; align-items: baseline;"><span style="font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; color: #e9a676;">O EIXO PERCEBEU</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #a9b3ad;">últimos 4 dias</span></div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px;">
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 10px; border-radius: 10px; background: #0f1a17;"><span style="font-size: 12px; color: #a9b3ad;">Sono</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 18px;">6h05</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; color: #e9a676;">−1h08</span></div>
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 10px; border-radius: 10px; background: #0f1a17;"><span style="font-size: 12px; color: #a9b3ad;">Álcool</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 18px;">4 dias</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; color: #e9a676;">meta 2</span></div>
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 10px; border-radius: 10px; background: #0f1a17;"><span style="font-size: 12px; color: #a9b3ad;">Check-in</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 18px;">0 de 3</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; color: #e9a676;">dias</span></div>
+</div>
+<span style="color: #a9b3ad; font-size: 14px; line-height: 21px;">Sem alarme e sem bronca. Seu padrão mudou, e isso é informação para ajustar o plano.</span>
+</div>
+
+<div style="padding: 16px; border-radius: 12px; background: #1d3a32; display: flex; flex-direction: column; gap: 12px;">
+<div style="display: flex; align-items: center; gap: 10px;">
+<span style="flex: 0 0 auto; width: 36px; height: 36px; border-radius: 999px; background: #e9a676; color: #0f1a17; display: flex; align-items: center; justify-content: center; font-family: 'Newsreader', Georgia, serif; font-size: 17px;">M</span>
+<span style="flex: 1 1 auto; display: flex; flex-direction: column;"><span style="font-weight: 600;">Marina · health coach</span><span style="font-size: 12px; line-height: 16px; color: rgba(239, 234, 224, 0.8);">há 20 min</span></span>
+</div>
+<span>Fechamento de trimestre pesa, eu sei. Sem culpa: que tal a gente encolher o plano até sexta e manter só o sono?</span>
+<div style="display: flex; gap: 8px;">
+<button onClick="{{goHoje}}" style="flex: 1 1 auto; min-height: 48px; border-radius: 999px; border: 0; background: #efeae0; color: #0f1a17; font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer;">Bora, encolhe</button>
+<button onClick="{{goCuidado}}" style="flex: 0 0 auto; min-height: 48px; padding: 0 16px; border-radius: 999px; border: 1px solid rgba(239, 234, 224, 0.5); background: transparent; color: #efeae0; font-family: inherit; font-size: 15px; font-weight: 500; cursor: pointer;">Conversar</button>
+</div>
+</div>
+
+<div style="background: #18261f; border: 1px solid #2e3e37; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px;">
+<div style="display: flex; justify-content: space-between; align-items: baseline;"><span style="font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; color: #e9a676;">PLANO DE RETOMADA</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #a9b3ad;">até sexta</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px;">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px;"><span style="font-weight: 500;">Dormir antes da meia-noite</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #e9a676;">1/4</span></div>
+<span style="display: block; height: 6px; border-radius: 999px; background: #20302a; overflow: hidden;"><span style="display: block; width: 25%; height: 6px; border-radius: 999px; background: #e9a676;"></span></span>
+<span style="font-size: 13px; line-height: 18px; color: #a9b3ad;">A única prioridade desta semana</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px; opacity: 0.55;"><span style="text-decoration: line-through;">Álcool só no fim de semana</span><span style="font-size: 13px; color: #a9b3ad;">em pausa até sexta</span></div>
+<div style="display: flex; flex-direction: column; gap: 4px; opacity: 0.55;"><span style="text-decoration: line-through;">Treinar 3 vezes</span><span style="font-size: 13px; color: #a9b3ad;">em pausa até sexta</span></div>
+</div>
+
+<div style="background: #18261f; border: 1px solid #2e3e37; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 10px;">
+<span style="font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; color: #e9a676;">SEU PLANO B · SÁBADO</span>
+<span style="font-size: 17px; line-height: 24px; font-weight: 600;">Churrasco do Léo</span>
+<span style="color: #a9b3ad;">"Água entre uma cerveja e outra. Comer antes de beber. Ir embora até as 22h." Escrito por você em 12 set.</span>
+</div>
+
+<span style="text-align: center; font-size: 13px; line-height: 18px; color: #a9b3ad; padding: 4px 12px;">Escorregão é dado, não fracasso. Seu ciclo continua.</span>
+</div>
+</sc-if>
+
+<!-- ============ HORMONAL ============ -->
+<sc-if value="{{isHormonal}}" hint-placeholder-val="{{ false }}">
+<div class="scr" style="flex: 1 1 auto; min-height: 0; overflow-y: auto; padding: 56px 20px 20px; display: flex; flex-direction: column; gap: 16px;">
+<div style="display: flex; flex-direction: column; gap: 4px;">
+<h1 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 400; font-size: 30px; line-height: 36px; letter-spacing: -0.01em;">Hormonal</h1>
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; color: #a9b3ad;">Última coleta · 02 out · 4 coletas</span>
+</div>
+
+<div style="display: flex; gap: 8px;">
+<sc-for list="{{metrics}}" as="m" hint-placeholder-count="3">
+<button onClick="{{m.pick}}" aria-pressed="{{m.pressed}}" style="{{m.style}}">{{m.short}}</button>
+</sc-for>
+</div>
+
+<div style="background: #18261f; border: 1px solid #2e3e37; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 10px;">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px;">
+<span style="font-weight: 600;">{{cur.name}}</span>
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; color: #7fc4a0;">{{cur.delta}}</span>
+</div>
+<div style="display: flex; align-items: baseline; gap: 6px;">
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 36px; line-height: 40px;">{{cur.value}}</span>
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; line-height: 18px; color: #a9b3ad;">{{cur.unit}}</span>
+</div>
+<svg viewBox="0 0 320 130" width="100%" role="img" aria-label="Gráfico de evolução do exame em quatro coletas, com a faixa de referência" style="display: block;">
+<rect x="0" y="{{cur.bandY}}" width="320" height="{{cur.bandH}}" fill="#1d3a32"></rect>
+<line x1="0" y1="122" x2="320" y2="122" stroke="#2e3e37" stroke-width="1"></line>
+<polyline pathLength="100" points="{{cur.line}}" fill="none" stroke="#7fb3a0" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" style="{{cur.lineStyle}}"></polyline>
+<circle cx="40" cy="{{cur.y0}}" r="3.5" fill="#7fb3a0"></circle>
+<circle cx="120" cy="{{cur.y1}}" r="3.5" fill="#7fb3a0"></circle>
+<circle cx="200" cy="{{cur.y2}}" r="3.5" fill="#7fb3a0"></circle>
+<circle cx="280" cy="{{cur.y3}}" r="5.5" fill="#d98a52"></circle>
+</svg>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); text-align: center; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; color: #a9b3ad;"><span>Jun</span><span>Jul</span><span>Ago</span><span>Out</span></div>
+<span style="font-size: 13px; line-height: 18px; color: #a9b3ad;">Faixa verde: referência do laboratório ({{cur.ref}}).</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 10px;">
+<span style="font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; color: #e9a676;">PAINEL COMPLETO</span>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 1px; background: #2e3e37; border: 1px solid #2e3e37; border-radius: 12px; overflow: hidden;">
+<sc-for list="{{panel}}" as="p" hint-placeholder-count="6">
+<li style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; background: #18261f;">
+<div style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 2px;">
+<span style="font-weight: 500;">{{p.name}}</span>
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; color: #a9b3ad;">ref. {{p.ref}}</span>
+</div>
+<div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px;">
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 15px; line-height: 20px;">{{p.value}}</span>
+<span style="{{p.chip}}">{{p.status}}</span>
+</div>
+</li>
+</sc-for>
+</ul>
+<span style="font-size: 13px; line-height: 18px; color: #a9b3ad;">Hematócrito acima da faixa: seu médico foi avisado e vai repetir o exame.</span>
+</div>
+
+<div style="background: #18261f; border: 1px solid #2e3e37; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 10px;">
+<div style="display: flex; justify-content: space-between; align-items: center;">
+<span style="font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; color: #e9a676;">PROTOCOLO ATIVO</span>
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; color: #a9b3ad;">mês 4</span>
+</div>
+<span style="font-size: 19px; line-height: 26px; font-weight: 600;">Reposição hormonal</span>
+<span style="color: #a9b3ad;">Definido pelo Dr. Lucas Claros em 02 out. Revisão em 9 dias, depois do exame de controle.</span>
+<button onClick="{{goCuidado}}" style="min-height: 48px; border-radius: 999px; border: 1px solid #6c7a73; background: transparent; color: #efeae0; font-family: inherit; font-size: 15px; font-weight: 500; cursor: pointer;">Ver plano de cuidado</button>
+</div>
+</div>
+</sc-if>
+
+<!-- ============ ROTINA ============ -->
+<sc-if value="{{isRotina}}" hint-placeholder-val="{{ false }}">
+<div class="scr" style="flex: 1 1 auto; min-height: 0; overflow-y: auto; padding: 56px 20px 20px; display: flex; flex-direction: column; gap: 16px;">
+<h1 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 400; font-size: 30px; line-height: 36px; letter-spacing: -0.01em;">Rotina</h1>
+
+<div style="display: flex; gap: 4px; padding: 4px; border-radius: 999px; background: #18261f; border: 1px solid #2e3e37;">
+<button onClick="{{showSono}}" aria-pressed="{{sonoOn}}" style="{{sonoStyle}}">Sono</button>
+<button onClick="{{showTreino}}" aria-pressed="{{treinoOn}}" style="{{treinoStyle}}">Treino</button>
+<button onClick="{{showAlim}}" aria-pressed="{{alimOn}}" style="{{alimStyle}}">Alimentação</button>
+</div>
+
+<sc-if value="{{isSono}}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; flex-direction: column; gap: 16px;">
+<div style="background: #18261f; border: 1px solid #2e3e37; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 14px;">
+<div style="display: flex; justify-content: space-between; align-items: flex-start;">
+<div style="display: flex; flex-direction: column; gap: 2px;">
+<span style="font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; color: #e9a676;">ONTEM À NOITE</span>
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 40px; line-height: 44px;">7h12</span>
+</div>
+<span style="font-size: 11px; line-height: 16px; font-weight: 600; padding: 2px 8px; border-radius: 4px; background: #1d3a32; color: #7fc4a0;">Bom</span>
+</div>
+<div style="display: flex; height: 10px; border-radius: 999px; overflow: hidden; gap: 2px;">
+<div style="flex: 52 1 0; background: #2e5a4d;"></div>
+<div style="flex: 21 1 0; background: #7fb3a0;"></div>
+<div style="flex: 22 1 0; background: #d98a52;"></div>
+<div style="flex: 5 1 0; background: #6c7a73;"></div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12px; line-height: 16px; color: #a9b3ad;">
+<span style="display: flex; align-items: center; gap: 6px;"><span style="width: 8px; height: 8px; border-radius: 999px; background: #2e5a4d;"></span>Leve 52%</span>
+<span style="display: flex; align-items: center; gap: 6px;"><span style="width: 8px; height: 8px; border-radius: 999px; background: #7fb3a0;"></span>Profundo 21%</span>
+<span style="display: flex; align-items: center; gap: 6px;"><span style="width: 8px; height: 8px; border-radius: 999px; background: #d98a52;"></span>REM 22%</span>
+<span style="display: flex; align-items: center; gap: 6px;"><span style="width: 8px; height: 8px; border-radius: 999px; background: #6c7a73;"></span>Acordado 5%</span>
+</div>
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; color: #a9b3ad;">Fonte: Garmin · exemplo</span>
+</div>
+
+<div style="background: #18261f; border: 1px solid #2e3e37; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px;">
+<div style="display: flex; justify-content: space-between; align-items: baseline;">
+<span style="font-weight: 600;">Últimos 7 dias</span>
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; color: #a9b3ad;">média 7h13</span>
+</div>
+<div style="position: relative; height: 110px; display: flex; align-items: flex-end; gap: 10px;">
+<div aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: {{targetBottom}}px; border-top: 1px dashed #6c7a73;"></div>
+<sc-for list="{{sleepBars}}" as="b" hint-placeholder-count="7">
+<div style="flex: 1 1 0; min-width: 0; display: flex; align-items: flex-end; height: 100%;">
+<div style="{{b.bar}}"></div>
+</div>
+</sc-for>
+</div>
+<div style="display: flex; gap: 10px;">
+<sc-for list="{{sleepBars}}" as="b" hint-placeholder-count="7">
+<span style="flex: 1 1 0; text-align: center; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; line-height: 14px; color: #a9b3ad;">{{b.day}}</span>
+</sc-for>
+</div>
+<span style="font-size: 13px; line-height: 18px; color: #a9b3ad;">Linha tracejada: meta de 7h30.</span>
+</div>
+
+<div style="padding: 16px; border-radius: 12px; border: 1px solid #6c7a73; background: #18261f; display: flex; flex-direction: column; gap: 8px;">
+<span style="font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; color: #e9a676;">INSIGHT DO EIXO</span>
+<span style="font-size: 17px; line-height: 24px;">Nas noites depois de beber, você dorme em média 41 minutos a menos.</span>
+<span style="font-size: 14px; line-height: 21px; color: #a9b3ad;">O Eixo cruza sono e hábitos. Você está há 12 dias sem álcool, e o sono acompanhou.</span>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{isTreino}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 16px;">
+<div style="background: #18261f; border: 1px solid #2e3e37; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px;">
+<div style="display: flex; justify-content: space-between; align-items: flex-start;">
+<div style="display: flex; flex-direction: column; gap: 2px;">
+<span style="font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; color: #e9a676;">ESTA SEMANA</span>
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 40px; line-height: 44px;">31 km</span>
+</div>
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; color: #7fc4a0;">+19% vs semana anterior</span>
+</div>
+<div style="display: flex; align-items: flex-end; gap: 10px; height: 130px;">
+<sc-for list="{{kmBars}}" as="k" hint-placeholder-count="6">
+<div style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 4px;">
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; line-height: 14px; color: #a9b3ad;">{{k.km}}</span>
+<div style="{{k.bar}}"></div>
+</div>
+</sc-for>
+</div>
+<div style="display: flex; gap: 10px;">
+<sc-for list="{{kmBars}}" as="k" hint-placeholder-count="6">
+<span style="flex: 1 1 0; text-align: center; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; line-height: 14px; color: #a9b3ad;">{{k.week}}</span>
+</sc-for>
+</div>
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; color: #a9b3ad;">Fonte: Strava e Garmin · exemplo</span>
+</div>
+
+<div style="background: #1d3a32; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 10px;">
+<span style="font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; color: #e9a676;">SUA META</span>
+<span style="font-family: 'Newsreader', Georgia, serif; font-size: 26px; line-height: 32px;">Rumo ao meio Ironman</span>
+<span style="display: block; height: 6px; border-radius: 999px; background: #0f1a17; overflow: hidden;"><span style="display: block; width: 24%; height: 6px; background: #7fb3a0;"></span></span>
+<span style="display: flex; justify-content: space-between; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; color: rgba(239, 234, 224, 0.85);"><span>Semana 9 de 38</span><span>natação · bike · corrida</span></span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 10px;">
+<span style="font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; color: #e9a676;">PRÓXIMOS TREINOS</span>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 1px; background: #2e3e37; border: 1px solid #2e3e37; border-radius: 12px; overflow: hidden;">
+<li style="display: flex; align-items: center; gap: 14px; padding: 12px 14px; background: #18261f;"><span style="flex: 0 0 36px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #e9a676;">QUI</span><span style="display: flex; flex-direction: column;"><span style="font-weight: 500;">Intervalado</span><span style="font-size: 13px; line-height: 18px; color: #a9b3ad;">5 × 800 m</span></span></li>
+<li style="display: flex; align-items: center; gap: 14px; padding: 12px 14px; background: #18261f;"><span style="flex: 0 0 36px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #e9a676;">SÁB</span><span style="display: flex; flex-direction: column;"><span style="font-weight: 500;">Longão</span><span style="font-size: 13px; line-height: 18px; color: #a9b3ad;">14 km em ritmo confortável</span></span></li>
+<li style="display: flex; align-items: center; gap: 14px; padding: 12px 14px; background: #18261f;"><span style="flex: 0 0 36px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #e9a676;">DOM</span><span style="display: flex; flex-direction: column;"><span style="font-weight: 500;">Natação</span><span style="font-size: 13px; line-height: 18px; color: #a9b3ad;">1.500 m</span></span></li>
+</ul>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{isAlim}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 16px;">
+<div style="background: #18261f; border: 1px solid #2e3e37; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 14px;">
+<div style="display: flex; justify-content: space-between; align-items: flex-start;">
+<div style="display: flex; flex-direction: column; gap: 2px;">
+<span style="font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; color: #e9a676;">PROTEÍNA HOJE</span>
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 40px; line-height: 44px;">78 g</span>
+</div>
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #a9b3ad; padding-top: 4px;">meta 140 g</span>
+</div>
+<span style="display: block; height: 8px; border-radius: 999px; background: #20302a; overflow: hidden;"><span style="display: block; width: 56%; height: 8px; border-radius: 999px; background: #7fb3a0;"></span></span>
+<span style="font-size: 13px; line-height: 18px; color: #a9b3ad;">Faltam 62 g. Um jantar com carne, peixe ou ovos fecha o dia.</span>
+</div>
+
+<div style="background: #18261f; border: 1px solid #2e3e37; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 0;">
+<div style="display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 6px;"><span style="font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; color: #e9a676;">REFEIÇÕES POR FOTO</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #a9b3ad;">hoje</span></div>
+<div style="display: flex; align-items: center; gap: 12px; padding: 10px 0; border-top: 1px solid #2e3e37;">
+<span style="flex: 0 0 auto; width: 44px; height: 44px; border-radius: 10px; background: #20302a; color: #7fb3a0; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="2"></rect><circle cx="12" cy="13" r="3.5"></circle><path d="M8 6l1.5-2h5L16 6"></path></svg></span>
+<span style="flex: 1 1 auto; display: flex; flex-direction: column;"><span style="font-weight: 500;">Café · <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #a9b3ad;">07:40</span></span><span style="font-size: 13px; line-height: 18px; color: #a9b3ad;">Ovos, pão integral e café</span></span>
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #7fb3a0;">22 g</span>
+</div><div style="display: flex; align-items: center; gap: 12px; padding: 10px 0; border-top: 1px solid #2e3e37;">
+<span style="flex: 0 0 auto; width: 44px; height: 44px; border-radius: 10px; background: #20302a; color: #7fb3a0; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="2"></rect><circle cx="12" cy="13" r="3.5"></circle><path d="M8 6l1.5-2h5L16 6"></path></svg></span>
+<span style="flex: 1 1 auto; display: flex; flex-direction: column;"><span style="font-weight: 500;">Almoço · <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #a9b3ad;">12:50</span></span><span style="font-size: 13px; line-height: 18px; color: #a9b3ad;">Frango, arroz, feijão e salada</span></span>
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #7fb3a0;">41 g</span>
+</div><div style="display: flex; align-items: center; gap: 12px; padding: 10px 0; border-top: 1px solid #2e3e37;">
+<span style="flex: 0 0 auto; width: 44px; height: 44px; border-radius: 10px; background: #20302a; color: #7fb3a0; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="2"></rect><circle cx="12" cy="13" r="3.5"></circle><path d="M8 6l1.5-2h5L16 6"></path></svg></span>
+<span style="flex: 1 1 auto; display: flex; flex-direction: column;"><span style="font-weight: 500;">Lanche · <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #a9b3ad;">16:10</span></span><span style="font-size: 13px; line-height: 18px; color: #a9b3ad;">Iogurte natural e castanhas</span></span>
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #7fb3a0;">15 g</span>
+</div>
+<button style="margin-top: 10px; min-height: 48px; border-radius: 999px; border: 1px dashed #6c7a73; background: transparent; color: #efeae0; font-family: inherit; font-size: 15px; font-weight: 500; cursor: pointer;">Fotografar o jantar</button>
+</div>
+
+<div style="background: #18261f; border: 1px solid #2e3e37; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 14px;">
+<span style="font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; color: #e9a676;">METAS DA SEMANA</span>
+<div style="display: flex; flex-direction: column; gap: 6px;">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px;"><span style="font-weight: 500;">Proteína em toda refeição</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #7fb3a0;">4/7 dias</span></div>
+<span style="display: block; height: 6px; border-radius: 999px; background: #20302a; overflow: hidden;"><span style="display: block; width: 57%; height: 6px; border-radius: 999px; background: #7fb3a0;"></span></span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px;">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px;"><span style="font-weight: 500;">Jantar antes das 21h</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #7fb3a0;">5/7 dias</span></div>
+<span style="display: block; height: 6px; border-radius: 999px; background: #20302a; overflow: hidden;"><span style="display: block; width: 71%; height: 6px; border-radius: 999px; background: #7fb3a0;"></span></span>
+</div>
+</div>
+
+<div style="padding: 16px; border-radius: 12px; background: #1d3a32; display: flex; flex-direction: column; gap: 8px;">
+<span style="font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; color: #e9a676;">INSIGHT DO EIXO</span>
+<span style="font-size: 17px; line-height: 24px; font-weight: 600;">Jantar cedo, dormir melhor.</span>
+<span style="color: rgba(239, 234, 224, 0.85);">Nos dias em que você jantou antes das 21h, dormiu 28 min a mais e acordou com disposição maior.</span>
+<span style="font-size: 13px; line-height: 18px; color: rgba(239, 234, 224, 0.75);">Dra. Paula Reis, nutróloga, revisa seu plano alimentar na semana 6.</span>
+</div>
+</div>
+</sc-if>
+</div>
+</sc-if>
+
+<!-- ============ MENTE ============ -->
+<sc-if value="{{isMente}}" hint-placeholder-val="{{ false }}">
+<div class="scr" style="flex: 1 1 auto; min-height: 0; overflow-y: auto; padding: 56px 20px 20px; display: flex; flex-direction: column; gap: 16px;">
+<div style="display: flex; flex-direction: column; gap: 4px;">
+<h1 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 400; font-size: 30px; line-height: 36px; letter-spacing: -0.01em;">Check-in</h1>
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; color: #a9b3ad;">Leva cerca de 2 minutos</span>
+</div>
+
+<div style="background: #18261f; border: 1px solid #2e3e37; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px;">
+<span style="font-weight: 600;">Como você está hoje?</span>
+<div style="display: flex; gap: 8px;">
+<sc-for list="{{moods}}" as="m" hint-placeholder-count="5">
+<button onClick="{{m.pick}}" aria-pressed="{{m.pressed}}" style="{{m.style}}">
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 17px; line-height: 22px;">{{m.n}}</span>
+<span style="font-size: 12px; line-height: 16px;">{{m.label}}</span>
+</button>
+</sc-for>
+</div>
+</div>
+
+<div style="background: #18261f; border: 1px solid #2e3e37; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 16px;">
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<div style="display: flex; justify-content: space-between; align-items: baseline;"><span style="font-weight: 600;">Disposição</span><span style="font-size: 12px; line-height: 16px; color: #a9b3ad;">1 baixa · 5 alta</span></div>
+<div style="display: flex; gap: 6px;">
+<sc-for list="{{scaleA}}" as="s" hint-placeholder-count="5">
+<button onClick="{{s.pick}}" aria-pressed="{{s.pressed}}" style="{{s.style}}">{{s.n}}</button>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<div style="display: flex; justify-content: space-between; align-items: baseline;"><span style="font-weight: 600;">Libido</span><span style="font-size: 12px; line-height: 16px; color: #a9b3ad;">1 baixa · 5 alta</span></div>
+<div style="display: flex; gap: 6px;">
+<sc-for list="{{scaleB}}" as="s" hint-placeholder-count="5">
+<button onClick="{{s.pick}}" aria-pressed="{{s.pressed}}" style="{{s.style}}">{{s.n}}</button>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<div style="display: flex; justify-content: space-between; align-items: baseline;"><span style="font-weight: 600;">Estresse</span><span style="font-size: 12px; line-height: 16px; color: #a9b3ad;">1 baixo · 5 alto</span></div>
+<div style="display: flex; gap: 6px;">
+<sc-for list="{{scaleC}}" as="s" hint-placeholder-count="5">
+<button onClick="{{s.pick}}" aria-pressed="{{s.pressed}}" style="{{s.style}}">{{s.n}}</button>
+</sc-for>
+</div>
+</div>
+</div>
+
+<button onClick="{{save}}" style="{{saveStyle}}">{{saveLabel}}</button>
+<sc-if value="{{isSaved}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; gap: 10px; padding: 12px; border-radius: 4px; background: #1d3a32; font-size: 13px; line-height: 18px; color: #efeae0;">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7fc4a0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 auto;"><path d="M20 6L9 17l-5-5"></path></svg>
+<span>Registrado. Seu médico vê esse histórico nas revisões e o Eixo cruza com sono, treino e exames.</span>
+</div>
+</sc-if>
+
+<div style="background: #18261f; border: 1px solid #2e3e37; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px;">
+<div style="display: flex; justify-content: space-between; align-items: baseline;">
+<span style="font-weight: 600;">Humor nos últimos 14 dias</span>
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; color: #a9b3ad;">exemplo</span>
+</div>
+<div style="display: flex; align-items: flex-end; gap: 4px; height: 48px;">
+<sc-for list="{{moodHist}}" as="h" hint-placeholder-count="14">
+<div style="{{h.bar}}"></div>
+</sc-for>
+</div>
+</div>
+
+<span style="font-size: 13px; line-height: 18px; color: #a9b3ad;">Passando por um momento difícil? Fale com a equipe ou ligue 188 (CVV, 24 horas). Em emergência, procure um pronto-socorro.</span>
+</div>
+</sc-if>
+
+<!-- ============ CUIDADO ============ -->
+<sc-if value="{{isCuidado}}" hint-placeholder-val="{{ false }}">
+<div class="scr" style="flex: 1 1 auto; min-height: 0; overflow-y: auto; padding: 56px 20px 20px; display: flex; flex-direction: column; gap: 16px;">
+<h1 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 400; font-size: 30px; line-height: 36px; letter-spacing: -0.01em;">Sua equipe</h1>
+<span style="margin-top: -8px; color: #a9b3ad;">Um time, um prontuário, um plano. Ninguém começa do zero.</span>
+
+<div style="background: #18261f; border: 1px solid #2e3e37; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 14px;">
+<span style="font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; color: #e9a676;">NESTE CICLO</span>
+<div style="display: flex; align-items: center; gap: 12px;">
+<span style="flex: 0 0 auto; width: 40px; height: 40px; border-radius: 999px; background: #0f1a17; border: 1px solid #2e3e37; color: #7fb3a0; display: flex; align-items: center; justify-content: center; font-family: 'Newsreader', Georgia, serif; font-size: 16px;">LC</span>
+<span style="display: flex; flex-direction: column;"><span style="font-weight: 600;">Dr. Lucas Claros</span><span style="font-size: 13px; line-height: 18px; color: #a9b3ad;">Médico responsável · revisa seus dados todo mês</span></span>
+</div>
+<div style="display: flex; align-items: center; gap: 12px;">
+<span style="flex: 0 0 auto; width: 40px; height: 40px; border-radius: 999px; background: #e9a676; border: 1px solid #2e3e37; color: #0f1a17; display: flex; align-items: center; justify-content: center; font-family: 'Newsreader', Georgia, serif; font-size: 16px;">M</span>
+<span style="display: flex; flex-direction: column;"><span style="font-weight: 600;">Marina Alves</span><span style="font-size: 13px; line-height: 18px; color: #a9b3ad;">Health coach · fala com você toda semana</span></span>
+</div>
+<div style="display: flex; align-items: center; gap: 12px;">
+<span style="flex: 0 0 auto; width: 40px; height: 40px; border-radius: 999px; background: #20302a; border: 1px solid #2e3e37; color: #efeae0; display: flex; align-items: center; justify-content: center; font-family: 'Newsreader', Georgia, serif; font-size: 16px;">PR</span>
+<span style="display: flex; flex-direction: column;"><span style="font-weight: 600;">Dra. Paula Reis</span><span style="font-size: 13px; line-height: 18px; color: #a9b3ad;">Nutróloga · entra neste ciclo</span></span>
+</div>
+</div>
+
+<div style="background: #18261f; border: 1px solid #2e3e37; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 10px;">
+<div style="display: flex; justify-content: space-between; align-items: baseline;">
+<span style="font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; color: #e9a676;">CONVERSA COM A EQUIPE</span>
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; color: #a9b3ad;">hoje</span>
+</div>
+<div style="align-self: flex-start; max-width: 86%; padding: 10px 14px; border-radius: 12px 12px 12px 4px; background: #20302a;">Nas noites sem álcool você dormiu 41 min a mais. Vamos manter a meta do fim de semana?<span style="display: block; padding-top: 4px; font-size: 12px; line-height: 16px; color: #a9b3ad;">Marina</span></div>
+<div style="align-self: flex-end; max-width: 80%; padding: 10px 14px; border-radius: 12px 12px 4px 12px; background: #7fb3a0; color: #0f1a17;">Bora. Sábado tem churrasco, mas seguro.</div>
+<div style="align-self: flex-start; max-width: 86%; padding: 10px 14px; border-radius: 12px 12px 12px 4px; background: #20302a;">Revisei seu hematócrito. Repetimos o exame em 4 semanas e ajusto a dose no retorno se precisar.<span style="display: block; padding-top: 4px; font-size: 12px; line-height: 16px; color: #a9b3ad;">Dr. Lucas</span></div>
+<button style="min-height: 48px; border-radius: 999px; border: 1px solid #6c7a73; background: transparent; color: #efeae0; font-family: inherit; font-size: 15px; font-weight: 500; cursor: pointer;">Escrever para a equipe</button>
+</div>
+
+<div style="background: #1d3a32; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px;">
+<span style="font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; color: #e9a676;">REVISÃO DO CICLO</span>
+<div style="display: flex; align-items: center; gap: 12px;">
+<div style="flex: 0 0 auto; width: 48px; height: 48px; border-radius: 999px; background: #0f1a17; border: 1px solid #7fb3a0; color: #7fb3a0; display: flex; align-items: center; justify-content: center; font-family: 'Newsreader', Georgia, serif; font-size: 18px;">LC</div>
+<div style="display: flex; flex-direction: column;">
+<span style="font-weight: 600;">Dr. Lucas Claros</span>
+<span style="font-size: 13px; line-height: 18px; color: rgba(239, 234, 224, 0.85);">Vídeo · 40 min · começa dos seus dados</span>
+</div>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: baseline;">
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 20px; line-height: 28px;">Qui, 15 · 18:00</span>
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; color: rgba(239, 234, 224, 0.85);">em 2 dias</span>
+</div>
+<div style="display: flex; gap: 8px;">
+<button style="flex: 1 1 auto; min-height: 48px; border-radius: 999px; border: 0; background: #efeae0; color: #0f1a17; font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer;">Entrar na sala</button>
+<button style="flex: 0 0 auto; min-height: 48px; padding: 0 18px; border-radius: 999px; border: 1px solid rgba(239, 234, 224, 0.5); background: transparent; color: #efeae0; font-family: inherit; font-size: 15px; font-weight: 500; cursor: pointer;">Reagendar</button>
+</div>
+</div>
+
+<div style="background: #18261f; border: 1px solid #2e3e37; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 8px;">
+<span style="font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; color: #e9a676;">EXAME DE CONTROLE</span>
+<span style="font-size: 18px; line-height: 24px; font-weight: 600;">Pedido disponível</span>
+<span style="color: #a9b3ad;">Faça até 22 out em qualquer laboratório e envie o resultado pelo app.</span>
+<button style="align-self: flex-start; min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid #6c7a73; background: transparent; color: #efeae0; font-family: inherit; font-size: 15px; font-weight: 500; cursor: pointer;">Ver pedido de exame</button>
+</div>
+
+<div style="background: #18261f; border: 1px solid #2e3e37; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px;">
+<div style="display: flex; justify-content: space-between; align-items: center;">
+<span style="font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; color: #e9a676;">FARMÁCIA PARCEIRA</span>
+<span style="font-size: 11px; line-height: 16px; font-weight: 600; padding: 2px 8px; border-radius: 4px; background: #20302a; color: #efeae0;">Em breve</span>
+</div>
+<span style="font-size: 18px; line-height: 24px; font-weight: 600;">Fórmula do mês</span>
+<div style="display: flex; flex-direction: column; gap: 0;">
+<div style="display: flex; align-items: flex-start; gap: 12px;">
+<div style="flex: 0 0 auto; display: flex; flex-direction: column; align-items: center;">
+<span style="width: 22px; height: 22px; border-radius: 999px; background: #7fb3a0; color: #0f1a17; display: flex; align-items: center; justify-content: center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span>
+<span style="width: 2px; height: 22px; background: #7fb3a0;"></span>
+</div>
+<div style="display: flex; justify-content: space-between; flex: 1 1 auto; padding-top: 1px;"><span>Receita enviada</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; line-height: 22px; color: #a9b3ad;">02 out</span></div>
+</div>
+<div style="display: flex; align-items: flex-start; gap: 12px;">
+<div style="flex: 0 0 auto; display: flex; flex-direction: column; align-items: center;">
+<span style="width: 22px; height: 22px; border-radius: 999px; background: #7fb3a0; color: #0f1a17; display: flex; align-items: center; justify-content: center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span>
+<span style="width: 2px; height: 22px; background: #6c7a73;"></span>
+</div>
+<div style="display: flex; justify-content: space-between; flex: 1 1 auto; padding-top: 1px;"><span>Em manipulação</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; line-height: 22px; color: #a9b3ad;">03 out</span></div>
+</div>
+<div style="display: flex; align-items: flex-start; gap: 12px;">
+<div style="flex: 0 0 auto; display: flex; flex-direction: column; align-items: center;">
+<span style="box-sizing: border-box; width: 22px; height: 22px; border-radius: 999px; border: 2px solid #d98a52; background: #0f1a17;"></span>
+</div>
+<div style="display: flex; justify-content: space-between; flex: 1 1 auto; padding-top: 1px;"><span style="font-weight: 600;">Saiu para entrega</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; line-height: 22px; color: #e9a676;">chega hoje</span></div>
+</div>
+</div>
+<span style="font-size: 13px; line-height: 18px; color: #a9b3ad;">Opcional. Você também pode comprar a receita na farmácia que preferir.</span>
+</div>
+
+</div>
+</sc-if>
+
+<!-- ============ BARRA DE ABAS ============ -->
+<sc-if value="{{showTabs}}" hint-placeholder-val="{{ true }}">
+<nav aria-label="Navegação do app" style="flex: 0 0 auto; display: flex; justify-content: space-around; padding: 8px 6px 26px; border-top: 1px solid #2e3e37; background: #0f1a17;">
+<button onClick="{{goHoje}}" aria-current="{{cHoje}}" style="{{tHoje}}">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.8 4.5v9L12 21l-7.8-4.5v-9z"></path><circle cx="12" cy="12" r="2.5"></circle></svg>Hoje</button>
+<button onClick="{{goHormonal}}" aria-current="{{cHormonal}}" style="{{tHormonal}}">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h3l2-6 4 12 3-9 2 3h4"></path></svg>Hormonal</button>
+<button onClick="{{goRotina}}" aria-current="{{cRotina}}" style="{{tRotina}}">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"></path></svg>Rotina</button>
+<button onClick="{{goMente}}" aria-current="{{cMente}}" style="{{tMente}}">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 10h.01M15 10h.01"></path></svg>Mente</button>
+<button onClick="{{goCuidado}}" aria-current="{{cCuidado}}" style="{{tCuidado}}">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"></path><circle cx="17" cy="9" r="2.5"></circle><path d="M16 14c2.8 0 5 2.2 5 5"></path></svg>Equipe</button>
+</nav>
+</sc-if>
+
+</div>
+</template>
+<noscript><p style="font-family:system-ui;padding:24px">O site da Eixo precisa de JavaScript ativado.</p></noscript>
+<script src="../assets/morphdom.min.js"></script>
+<script src="../assets/eixo-runtime.js"></script>
+<script>
+DC.define("AppEixo", (function () {
+
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = {
+screen: (props && props.screen) ? props.screen : 'welcome',
+ready: false,
+goals: ['energia', 'sono', 'hormonal'],
+axis: 2,
+metric: 0,
+view: (props && props.view) ? props.view : 'sono',
+mood: 4,
+dispo: 4,
+libido: 3,
+estresse: 2,
+saved: false
+};
+}
+componentDidMount() { this.arm(); }
+componentWillUnmount() { clearTimeout(this._t); }
+arm() {
+clearTimeout(this._t);
+this._t = setTimeout(() => this.setState({ ready: true }), 120);
+}
+go(s, extra) {
+this.setState(Object.assign({ screen: s, ready: false }, extra || {}));
+this.arm();
+}
+renderVals() {
+const st = this.state;
+const ready = st.ready;
+const screen = st.screen;
+
+// ---- eixos (radar) ----
+const AX = [
+{ name: 'Hormonal', score: 72, delta: '+9 em 30 dias', text: 'Testosterona total em 412 ng/dL, subindo nas três últimas coletas. Próxima coleta em 9 dias.' },
+{ name: 'Energia', score: 68, delta: '+5 em 30 dias', text: 'Disposição média de 3,6 em 5 nos últimos 14 dias. Libido estável.' },
+{ name: 'Sono', score: 81, delta: '+4 em 30 dias', text: '7h13 por noite em média, com horário regular. Meta: 7h30.' },
+{ name: 'Alimentação', score: 70, delta: '+6 em 30 dias', text: 'Proteína na meta em 4 de 7 dias. Jantar mais cedo nas noites de semana.' },
+{ name: 'Corpo', score: 64, delta: '+2 em 30 dias', text: '31 km corridos nesta semana. Massa magra estável e gordura corporal em queda lenta.' },
+{ name: 'Mente', score: 74, delta: '+3 em 30 dias', text: 'Humor estável. O estresse costuma subir às segundas-feiras.' },
+{ name: 'Conexões', score: 78, delta: '+2 em 30 dias', text: 'Dois encontros com amigos nesta semana e o desafio em grupo do Clube.' },
+{ name: 'Hábitos', score: 85, delta: '+11 em 30 dias', text: '12 dias sem álcool e nenhum cigarro nesta semana. Meta: 30 dias.' }
+];
+const cx = 170, cy = 150, R = 88;
+const pt = (k, s) => {
+const a = (-90 + (360 / AX.length) * k) * Math.PI / 180;
+return { x: cx + R * s * Math.cos(a), y: cy + R * s * Math.sin(a) };
+};
+const vals = {};
+let sum = 0;
+const poly = [];
+AX.forEach((a, k) => {
+sum += a.score;
+const p = pt(k, a.score / 100);
+poly.push(p.x.toFixed(1) + ',' + p.y.toFixed(1));
+const on = (screen === 'welcome' ? -1 : st.axis) === k;
+vals['d' + k + 'x'] = p.x.toFixed(1);
+vals['d' + k + 'y'] = p.y.toFixed(1);
+vals['d' + k + 'r'] = on ? 6 : 3.5;
+vals['d' + k + 'f'] = on ? '#d98a52' : '#7fb3a0';
+vals['l' + k] = on ? '#efeae0' : '#a9b3ad';
+});
+vals.radarPts = poly.join(' ');
+vals.index = String(Math.round(sum / AX.length));
+vals.radarG = 'transform-origin: 170px 150px; transform: scale(' + (ready ? 1 : 0.15) + '); opacity: ' + (ready ? 1 : 0) + '; transition: transform 900ms cubic-bezier(0.2, 0.8, 0.2, 1), opacity 500ms ease;';
+vals.axes = AX.map((a, k) => {
+const on = st.axis === k;
+return {
+name: a.name,
+score: a.score,
+pressed: on ? 'true' : 'false',
+pick: () => this.setState({ axis: k }),
+style: 'min-height: 56px; border-radius: 12px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 6px 10px; font-family: inherit; cursor: pointer; text-align: left; color: #efeae0; background: ' + (on ? '#1d3a32' : '#0f1a17') + '; border: ' + (on ? '1.5px solid #7fb3a0' : '1px solid #2e3e37') + ';'
+};
+});
+vals.sel = AX[st.axis];
+
+// ---- objetivos ----
+const G = [
+{ id: 'energia', label: 'Mais energia e disposição' },
+{ id: 'libido', label: 'Libido e vida sexual' },
+{ id: 'sono', label: 'Dormir melhor' },
+{ id: 'hormonal', label: 'Entender meus hormônios' },
+{ id: 'corpo', label: 'Ganhar força e correr mais' },
+{ id: 'alimentacao', label: 'Comer melhor sem dieta maluca' },
+{ id: 'mente', label: 'Menos estresse, mais foco' },
+{ id: 'conexoes', label: 'Mais tempo com amigos e família' },
+{ id: 'habitos', label: 'Beber ou fumar menos' },
+{ id: 'fertilidade', label: 'Fertilidade e planos de ter filhos' }
+];
+vals.goals = G.map((g) => {
+const on = st.goals.indexOf(g.id) >= 0;
+return {
+label: g.label,
+pressed: on ? 'true' : 'false',
+toggle: () => {
+const cur = this.state.goals;
+const next = cur.indexOf(g.id) >= 0 ? cur.filter((x) => x !== g.id) : cur.concat([g.id]);
+this.setState({ goals: next });
+},
+style: 'display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 16px; border-radius: 999px; font-family: inherit; font-size: 15px; color: #efeae0; cursor: pointer; background: ' + (on ? '#1d3a32' : '#18261f') + '; border: ' + (on ? '1.5px solid #7fb3a0' : '1px solid #2e3e37') + ';',
+dot: 'flex: 0 0 auto; box-sizing: border-box; width: 12px; height: 12px; border-radius: 999px; border: 1.5px solid ' + (on ? '#7fb3a0' : '#6c7a73') + '; background: ' + (on ? '#7fb3a0' : 'transparent') + ';'
+};
+});
+vals.goalCount = st.goals.length === 1 ? '1 objetivo' : st.goals.length + ' objetivos';
+
+// ---- hormonal ----
+const MET = [
+{ short: 'T. total', name: 'Testosterona total', unit: 'ng/dL', v: [268, 331, 389, 412], lo: 264, hi: 916, dmin: 240, dmax: 480, dec: 0 },
+{ short: 'T. livre', name: 'Testosterona livre', unit: 'ng/dL', v: [5.1, 6.4, 7.2, 7.9], lo: 5, hi: 21, dmin: 4, dmax: 9, dec: 1 },
+{ short: 'Estradiol', name: 'Estradiol', unit: 'pg/mL', v: [22, 28, 31, 34], lo: 11, hi: 44, dmin: 15, dmax: 40, dec: 0 }
+];
+const fmtN = (n, d) => n.toFixed(d).replace('.', ',');
+const m = MET[st.metric];
+const yOf = (v) => {
+const y = 122 - (v - m.dmin) / (m.dmax - m.dmin) * 104;
+return Math.max(14, Math.min(122, y));
+};
+const ys = m.v.map(yOf);
+const bandTop = yOf(Math.min(m.hi, m.dmax));
+const bandBot = yOf(Math.max(m.lo, m.dmin));
+const last = m.v[3], prev = m.v[2];
+const pct = Math.round((last - prev) / prev * 100);
+vals.cur = {
+name: m.name,
+value: fmtN(last, m.dec),
+unit: m.unit,
+delta: (pct >= 0 ? '+' : '') + pct + '% vs coleta anterior',
+ref: fmtN(m.lo, m.dec) + ' a ' + fmtN(m.hi, m.dec) + ' ' + m.unit,
+bandY: bandTop.toFixed(1),
+bandH: (bandBot - bandTop).toFixed(1),
+line: [40, 120, 200, 280].map((x, i) => x + ',' + ys[i].toFixed(1)).join(' '),
+y0: ys[0].toFixed(1),
+y1: ys[1].toFixed(1),
+y2: ys[2].toFixed(1),
+y3: ys[3].toFixed(1),
+lineStyle: 'stroke-dasharray: 100; stroke-dashoffset: ' + (ready ? 0 : 100) + '; transition: stroke-dashoffset 1000ms ease-out;'
+};
+vals.metrics = MET.map((x, i) => {
+const on = st.metric === i;
+return {
+short: x.short,
+pressed: on ? 'true' : 'false',
+pick: () => { this.setState({ metric: i, ready: false }); this.arm(); },
+style: 'flex: 1 1 0; min-height: 44px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 500; cursor: pointer; color: ' + (on ? '#0f1a17' : '#efeae0') + '; background: ' + (on ? '#7fb3a0' : '#18261f') + '; border: 1px solid ' + (on ? '#7fb3a0' : '#2e3e37') + ';'
+};
+});
+const chipOk = 'font-size: 11px; line-height: 16px; font-weight: 600; padding: 2px 8px; border-radius: 4px; background: #1d3a32; color: #7fc4a0;';
+const chipAlert = 'font-size: 11px; line-height: 16px; font-weight: 600; padding: 2px 8px; border-radius: 4px; background: #3a211b; color: #f08f78;';
+vals.panel = [
+{ name: 'Testosterona total', value: '412 ng/dL', ref: '264 a 916', status: 'Na faixa', chip: chipOk },
+{ name: 'Testosterona livre', value: '7,9 ng/dL', ref: '5,0 a 21,0', status: 'Na faixa', chip: chipOk },
+{ name: 'SHBG', value: '38 nmol/L', ref: '16 a 55', status: 'Na faixa', chip: chipOk },
+{ name: 'Estradiol', value: '34 pg/mL', ref: '11 a 44', status: 'Na faixa', chip: chipOk },
+{ name: 'Hematócrito', value: '51,2 %', ref: '40 a 50', status: 'Acima da faixa', chip: chipAlert },
+{ name: 'PSA total', value: '0,7 ng/mL', ref: 'até 4,0', status: 'Na faixa', chip: chipOk }
+];
+
+// ---- rotina ----
+const segOn = 'flex: 1 1 0; min-height: 44px; border-radius: 999px; border: 0; background: #7fb3a0; color: #0f1a17; font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer;';
+const segOff = 'flex: 1 1 0; min-height: 44px; border-radius: 999px; border: 0; background: transparent; color: #efeae0; font-family: inherit; font-size: 15px; font-weight: 500; cursor: pointer;';
+vals.sonoOn = st.view === 'sono' ? 'true' : 'false';
+vals.treinoOn = st.view === 'treino' ? 'true' : 'false';
+vals.sonoStyle = st.view === 'sono' ? segOn : segOff;
+vals.treinoStyle = st.view === 'treino' ? segOn : segOff;
+vals.isSono = st.view === 'sono';
+vals.isTreino = st.view === 'treino';
+vals.isAlim = st.view === 'alim';
+vals.alimOn = st.view === 'alim' ? 'true' : 'false';
+vals.alimStyle = st.view === 'alim' ? segOn : segOff;
+vals.showAlim = () => this.setState({ view: 'alim' });
+vals.showSono = () => this.setState({ view: 'sono' });
+vals.showTreino = () => this.setState({ view: 'treino' });
+const SL = [['Qua', 6.4], ['Qui', 7.0], ['Sex', 7.4], ['Sáb', 6.8], ['Dom', 7.6], ['Seg', 8.1], ['Ter', 7.2]];
+vals.targetBottom = (7.5 / 9 * 110).toFixed(1);
+vals.sleepBars = SL.map((d, i) => ({
+day: d[0],
+bar: 'width: 100%; border-radius: 4px 4px 0 0; height: ' + (d[1] / 9 * 110).toFixed(1) + 'px; background: ' + (i === 6 ? '#7fb3a0' : '#2e5a4d') + ';'
+}));
+const KM = [['S4', 18], ['S5', 24], ['S6', 22], ['S7', 28], ['S8', 26], ['S9', 31]];
+vals.kmBars = KM.map((d, i) => ({
+week: d[0],
+km: d[1],
+bar: 'width: 100%; border-radius: 4px 4px 0 0; height: ' + (d[1] / 36 * 96).toFixed(1) + 'px; background: ' + (i === 5 ? '#7fb3a0' : '#2e5a4d') + ';'
+}));
+
+// ---- mente ----
+const ML = ['Mal', 'Baixo', 'Ok', 'Bem', 'Ótimo'];
+vals.moods = ML.map((l, i) => {
+const on = st.mood === i + 1;
+return {
+n: i + 1,
+label: l,
+pressed: on ? 'true' : 'false',
+pick: () => this.setState({ mood: i + 1, saved: false }),
+style: 'flex: 1 1 0; min-height: 64px; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; font-family: inherit; cursor: pointer; color: ' + (on ? '#0f1a17' : '#efeae0') + '; background: ' + (on ? '#7fb3a0' : '#0f1a17') + '; border: 1px solid ' + (on ? '#7fb3a0' : '#2e3e37') + ';'
+};
+});
+const scale = (key) => [1, 2, 3, 4, 5].map((n) => {
+const on = st[key] === n;
+return {
+n: n,
+pressed: on ? 'true' : 'false',
+pick: () => this.setState({ [key]: n, saved: false }),
+style: 'flex: 1 1 0; min-height: 44px; border-radius: 12px; font-family: \'Geist Mono\', ui-monospace, monospace; font-size: 16px; cursor: pointer; color: ' + (on ? '#0f1a17' : '#efeae0') + '; background: ' + (on ? '#7fb3a0' : '#0f1a17') + '; border: 1px solid ' + (on ? '#7fb3a0' : '#2e3e37') + ';'
+};
+});
+vals.scaleA = scale('dispo');
+vals.scaleB = scale('libido');
+vals.scaleC = scale('estresse');
+vals.isSaved = st.saved;
+vals.save = () => this.setState({ saved: true });
+vals.saveLabel = st.saved ? 'Check-in registrado' : 'Registrar check-in';
+vals.saveStyle = 'min-height: 52px; border-radius: 999px; font-family: inherit; font-size: 16px; font-weight: 600; cursor: pointer; border: ' + (st.saved ? '1px solid #7fb3a0' : '0') + '; background: ' + (st.saved ? 'transparent' : '#7fb3a0') + '; color: ' + (st.saved ? '#7fb3a0' : '#0f1a17') + ';';
+const HIST = [3, 3, 4, 2, 3, 4, 4, 3, 5, 4, 4, 3, 4, 4];
+vals.moodHist = HIST.map((v, i) => ({
+bar: 'flex: 1 1 0; border-radius: 3px; height: ' + (v * 9) + 'px; background: ' + (i === 13 ? '#d98a52' : '#7fb3a0') + '; opacity: ' + (i === 13 ? 1 : (0.35 + v * 0.1).toFixed(2)) + ';'
+}));
+
+// ---- navegação ----
+vals.isWelcome = screen === 'welcome';
+vals.isGoals = screen === 'goals';
+vals.isHoje = screen === 'hoje';
+vals.isRetomada = screen === 'retomada';
+vals.goRetomada = () => this.go('retomada');
+vals.isHormonal = screen === 'hormonal';
+vals.isRotina = screen === 'rotina';
+vals.isMente = screen === 'mente';
+vals.isCuidado = screen === 'cuidado';
+vals.showTabs = !(screen === 'welcome' || screen === 'goals');
+vals.goWelcome = () => this.go('welcome');
+vals.goGoals = () => this.go('goals');
+vals.goHoje = () => this.go('hoje');
+vals.goHormonal = () => this.go('hormonal');
+vals.goRotina = () => this.go('rotina');
+vals.goMente = () => this.go('mente');
+vals.goCuidado = () => this.go('cuidado');
+vals.goTreino = () => this.go('rotina', { view: 'treino' });
+const tab = (on) => 'min-width: 64px; min-height: 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; border: 0; background: transparent; font-family: inherit; font-size: 11px; line-height: 14px; cursor: pointer; color: ' + (on ? '#7fb3a0' : '#a9b3ad') + ';' + (on ? ' font-weight: 600;' : '');
+vals.tHoje = tab(screen === 'hoje' || screen === 'retomada');
+vals.tHormonal = tab(screen === 'hormonal');
+vals.tRotina = tab(screen === 'rotina');
+vals.tMente = tab(screen === 'mente');
+vals.tCuidado = tab(screen === 'cuidado');
+vals.cHoje = (screen === 'hoje' || screen === 'retomada') ? 'page' : undefined;
+vals.cHormonal = screen === 'hormonal' ? 'page' : undefined;
+vals.cRotina = screen === 'rotina' ? 'page' : undefined;
+vals.cMente = screen === 'mente' ? 'page' : undefined;
+vals.cCuidado = screen === 'cuidado' ? 'page' : undefined;
+return vals;
+}
+}
+
+return Component;
+})());
+DC.define("PaginaApp", (function () {
+class Component extends DCLogic { renderVals() { return {}; } }
+return Component;
+})());
+DC.mount("PaginaApp", document.getElementById('eixo-root'));
+</script>
+</body>
+</html>

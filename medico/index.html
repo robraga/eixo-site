@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eixo · Painel do médico</title>
+<meta name="description" content="A consulta começa dos dados: o painel do médico no método Eixo.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#142420">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Eixo">
+<meta property="og:title" content="Eixo · Painel do médico">
+<meta property="og:description" content="A consulta começa dos dados: o painel do médico no método Eixo.">
+<meta property="og:image" content="https://eixo.club/assets/og.png">
+<meta property="og:url" content="https://eixo.club/medico/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+/* PaginaMedico */
+body{margin:0;background:#e8e2d6}
+/* PainelMedico */
+
+body{margin:0;background:#f3efe7}
+.pm button{font-family:inherit}
+.pm :focus-visible{outline:2px solid #b4622d;outline-offset:2px}
+
+</style>
+</head>
+<body>
+<div id="eixo-root"></div>
+<template id="dc-tpl-PaginaMedico">
+<div style="min-height: 100vh; background: #e8e2d6; color: #142420; font-family: 'Geist', system-ui, sans-serif; display: flex; flex-direction: column; align-items: center; gap: 24px; padding: 32px 16px 48px; box-sizing: border-box;">
+<div style="width: 100%; max-width: 1280px; display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap;">
+<a href="../" style="color: #142420; text-decoration: none; font-family: 'Newsreader', Georgia, serif; font-size: 32px; line-height: 34px;">Eixo</a>
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #4c5a54;">painel do médico · dados de demonstração</span>
+</div>
+<div style="max-width: 100%; overflow-x: auto; border-radius: 14px; box-shadow: 0 40px 80px -40px rgba(20,36,32,0.6);">
+<div style="width: 1280px; height: 800px;">
+<dc-import name="PainelMedico" hint-size="1280px,800px"></dc-import>
+</div>
+</div>
+</div></template>
+<template id="dc-tpl-PainelMedico">
+<div class="pm" style="width: 1280px; height: 800px; display: flex; background: #f3efe7; color: #142420; font-family: 'Geist', system-ui, sans-serif; font-size: 15px; line-height: 22px; overflow: hidden;">
+
+<aside style="flex: 0 0 220px; background: #142420; color: #efeae0; display: flex; flex-direction: column; padding: 24px 16px; gap: 28px;">
+<div style="display: flex; align-items: baseline; gap: 8px; padding: 0 8px;">
+<span style="font-family: 'Newsreader', Georgia, serif; font-size: 30px; line-height: 30px; letter-spacing: -0.02em;">Eixo</span>
+<span style="font-size: 11px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; padding: 2px 6px; border-radius: 4px; background: #1f4d43; color: #d5e2dc;">MÉDICO</span>
+</div>
+<nav aria-label="Seções do painel" style="display: flex; flex-direction: column; gap: 2px;">
+<a href="#" aria-current="page" style="min-height: 44px; display: flex; align-items: center; justify-content: space-between; padding: 0 12px; border-radius: 8px; background: #1f4d43; color: #f3efe7; text-decoration: none; font-weight: 500;">Hoje</a>
+<a href="#" style="min-height: 44px; display: flex; align-items: center; justify-content: space-between; padding: 0 12px; border-radius: 8px; color: #d5e2dc; text-decoration: none;">Pacientes em ciclo<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #a9b3ad;">48</span></a>
+<a href="#" style="min-height: 44px; display: flex; align-items: center; justify-content: space-between; padding: 0 12px; border-radius: 8px; color: #d5e2dc; text-decoration: none;">Alertas<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #e9a676;">3</span></a>
+<a href="#" style="min-height: 44px; display: flex; align-items: center; justify-content: space-between; padding: 0 12px; border-radius: 8px; color: #d5e2dc; text-decoration: none;">Mensagens<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #a9b3ad;">5</span></a>
+<a href="#" style="min-height: 44px; display: flex; align-items: center; justify-content: space-between; padding: 0 12px; border-radius: 8px; color: #d5e2dc; text-decoration: none;">Protocolos</a>
+<a href="#" style="min-height: 44px; display: flex; align-items: center; justify-content: space-between; padding: 0 12px; border-radius: 8px; color: #d5e2dc; text-decoration: none;">Agenda</a>
+</nav>
+<div style="margin-top: auto; display: flex; align-items: center; gap: 10px; padding: 12px 8px 0; border-top: 1px solid #2e3e37;">
+<span style="flex: 0 0 auto; width: 36px; height: 36px; border-radius: 999px; border: 1px solid #7fb3a0; color: #7fb3a0; display: flex; align-items: center; justify-content: center; font-family: 'Newsreader', Georgia, serif; font-size: 15px;">LC</span>
+<span style="display: flex; flex-direction: column;"><span style="font-weight: 500; font-size: 14px; line-height: 20px;">Dr. Lucas Claros</span><span style="font-size: 12px; line-height: 16px; color: #a9b3ad;">Direção médica</span></span>
+</div>
+</aside>
+
+<main style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; padding: 24px 28px; gap: 18px;">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px;">
+<div style="display: flex; flex-direction: column; gap: 2px;">
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; line-height: 18px; color: #4c5a54;">Quinta, 15 out · dados de demonstração</span>
+<h1 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 400; font-size: 34px; line-height: 40px; letter-spacing: -0.015em;">Bom dia, Dr. Lucas</h1>
+</div>
+<div style="display: flex; gap: 10px;">
+<div style="display: flex; flex-direction: column; padding: 8px 14px; border-radius: 10px; background: #ffffff; border: 1px solid #cfc6b6;"><span style="font-size: 12px; line-height: 16px; color: #4c5a54;">Em ciclo</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 20px; line-height: 26px;">48</span></div>
+<div style="display: flex; flex-direction: column; padding: 8px 14px; border-radius: 10px; background: #ffffff; border: 1px solid #cfc6b6;"><span style="font-size: 12px; line-height: 16px; color: #4c5a54;">Adesão média</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 20px; line-height: 26px;">78%</span></div>
+<div style="display: flex; flex-direction: column; padding: 8px 14px; border-radius: 10px; background: #ffffff; border: 1px solid #cfc6b6;"><span style="font-size: 12px; line-height: 16px; color: #4c5a54;">Índice médio</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 20px; line-height: 26px; color: #2b6a4e;">+7</span></div>
+<div style="display: flex; flex-direction: column; padding: 8px 14px; border-radius: 10px; background: #fbeee3; border: 1px solid #e9c3a3;"><span style="font-size: 12px; line-height: 16px; color: #8a4519;">Alertas</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 20px; line-height: 26px; color: #8a4519;">3</span></div>
+</div>
+</div>
+
+<div style="flex: 1 1 auto; min-height: 0; display: flex; gap: 18px;">
+
+<section aria-label="Consultas de hoje" style="flex: 0 0 350px; display: flex; flex-direction: column; gap: 10px;">
+<span style="font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; color: #8a4519;">CONSULTAS DE HOJE</span>
+<sc-for list="{{pts}}" as="p" hint-placeholder-count="4">
+<button onClick="{{p.pick}}" aria-pressed="{{p.pressed}}" style="{{p.style}}">
+<span style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px;">
+<span style="font-weight: 600; font-size: 16px;">{{p.name}}</span>
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #4c5a54;">{{p.time}}</span>
+</span>
+<span style="font-size: 13px; line-height: 18px; color: #4c5a54;">{{p.meta}}</span>
+<span style="display: flex; align-items: center; gap: 10px;">
+<span style="flex: 1 1 auto; display: block; height: 6px; border-radius: 999px; background: #e8e2d6; overflow: hidden;"><span style="{{p.barStyle}}"></span></span>
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #4c5a54;">{{p.adh}}</span>
+</span>
+<span style="{{p.flagStyle}}">{{p.flag}}</span>
+</button>
+</sc-for>
+</section>
+
+<section aria-label="Paciente selecionado" style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 14px; padding: 20px 22px; border-radius: 14px; background: #ffffff; border: 1px solid #cfc6b6; overflow: hidden;">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px;">
+<div style="display: flex; flex-direction: column; gap: 2px;">
+<span style="font-family: 'Newsreader', Georgia, serif; font-size: 30px; line-height: 34px; letter-spacing: -0.01em;">{{d.name}}</span>
+<span style="color: #4c5a54;">{{d.meta}}</span>
+</div>
+<span style="flex: 0 0 auto; font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.06em; padding: 6px 10px; border-radius: 999px; background: #d5e2dc; color: #1f4d43;">A CONSULTA COMEÇA DOS DADOS</span>
+</div>
+
+<span style="font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; color: #8a4519;">{{d.since}}</span>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px;">
+<sc-for list="{{tiles}}" as="k" hint-placeholder-count="4">
+<div style="display: flex; flex-direction: column; gap: 4px; padding: 12px; border-radius: 10px; background: #f3efe7;">
+<span style="font-size: 12px; line-height: 16px; color: #4c5a54;">{{k.label}}</span>
+<span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 22px; line-height: 28px;">{{k.now}}</span>
+<span style="{{k.dStyle}}">{{k.delta}}</span>
+</div>
+</sc-for>
+</div>
+
+<div style="{{d.alertStyle}}">
+<span style="font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em;">{{d.alertKicker}}</span>
+<span style="font-weight: 600;">{{d.alertTitle}}</span>
+<span style="font-size: 14px; line-height: 20px;">{{d.alertText}}</span>
+</div>
+
+<div style="display: flex; gap: 14px; min-height: 0;">
+<div style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 10px;">
+<span style="font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; color: #8a4519;">ADESÃO ÀS PRIORIDADES</span>
+<sc-for list="{{prios}}" as="r" hint-placeholder-count="3">
+<div style="display: flex; flex-direction: column; gap: 4px;">
+<span style="display: flex; justify-content: space-between; gap: 8px; font-size: 14px; line-height: 20px;"><span>{{r.name}}</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; color: #4c5a54;">{{r.pct}}</span></span>
+<span style="display: block; height: 6px; border-radius: 999px; background: #e8e2d6; overflow: hidden;"><span style="{{r.bar}}"></span></span>
+</div>
+</sc-for>
+</div>
+<div style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 8px; padding: 12px 14px; border-radius: 10px; background: #f3efe7;">
+<span style="font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; color: #8a4519;">NOTA DA EQUIPE</span>
+<span style="font-size: 14px; line-height: 21px;">{{d.note}}</span>
+<span style="font-size: 12px; line-height: 16px; color: #4c5a54;">{{d.noteBy}}</span>
+</div>
+</div>
+
+<div style="margin-top: auto; display: flex; gap: 10px;">
+<button style="min-height: 44px; padding: 0 18px; border-radius: 10px; border: 0; background: #1f4d43; color: #f3efe7; font-size: 15px; font-weight: 500; cursor: pointer; white-space: nowrap;">Ajustar plano do ciclo</button>
+<button style="min-height: 44px; padding: 0 18px; border-radius: 10px; border: 1px solid #7d8a84; background: transparent; color: #142420; font-size: 15px; cursor: pointer; white-space: nowrap;">Pedir exames</button>
+<button style="min-height: 44px; padding: 0 18px; border-radius: 10px; border: 1px solid #7d8a84; background: transparent; color: #142420; font-size: 15px; cursor: pointer; white-space: nowrap;">Mensagem ao paciente</button>
+</div>
+</section>
+</div>
+</main>
+</div>
+</template>
+<noscript><p style="font-family:system-ui;padding:24px">O site da Eixo precisa de JavaScript ativado.</p></noscript>
+<script src="../assets/morphdom.min.js"></script>
+<script src="../assets/eixo-runtime.js"></script>
+<script>
+DC.define("PainelMedico", (function () {
+
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { sel: 0 };
+}
+renderVals() {
+const P = [
+{ name: 'Rafael M.', time: '18:00', meta: '42 anos · ciclo 2 · semana 5 de 12', adh: 86, flag: 'Hematócrito acima da faixa', level: 'alert',
+  since: 'DESDE A ÚLTIMA CONSULTA · 35 DIAS',
+  tiles: [['Índice Eixo', '74', '+8 desde 66', 1], ['Sono médio', '7h13', '+41 min', 1], ['Álcool', '2 d/sem', 'antes 4 d/sem', 1], ['T. total', '412', 'ng/dL · +54%', 1]],
+  alertKicker: 'ALERTA DO MÉTODO', alertTitle: 'Hematócrito 51,2%, acima da faixa', alertText: 'Subiu em duas coletas seguidas. Sugestão do protocolo: repetir em 4 semanas e reavaliar a dose na consulta de hoje.',
+  prios: [['Dormir 7h30', 71], ['Álcool só no fim de semana', 100], ['Treinar 3 vezes', 67]],
+  note: 'Responde bem a metas semanais curtas. Sábado é o dia crítico para álcool; combinamos estratégia para o churrasco.', noteBy: 'Marina Alves, health coach · ontem' },
+{ name: 'Carlos T.', time: '18:45', meta: '51 anos · ciclo 1 · semana 9 de 12', adh: 34, flag: 'Sem check-in há 6 dias', level: 'risk',
+  since: 'DESDE A ÚLTIMA CONSULTA · 28 DIAS',
+  tiles: [['Índice Eixo', '58', '+1 desde 57', 0], ['Sono médio', '5h50', '−12 min', -1], ['Treinos', '1/sem', 'meta 3/sem', -1], ['Humor', '2,4', 'de 5 · em queda', -1]],
+  alertKicker: 'RISCO DE ABANDONO', alertTitle: 'Engajamento caiu nas últimas 2 semanas', alertText: 'Humor e sono em queda junto com a adesão. Antes de ajustar metas, vale entender o que mudou na rotina.',
+  prios: [['Dormir 7h', 28], ['Caminhar 30 min', 40], ['Parar de fumar · fase 1', 35]],
+  note: 'Trocou de emprego há 3 semanas. Pediu metas menores. Sugiro reduzir o plano para 1 prioridade até a próxima revisão.', noteBy: 'Marina Alves, health coach · há 2 dias' },
+{ name: 'André S.', time: '19:30', meta: '38 anos · ciclo 1 · semana 2 de 12', adh: 92, flag: 'Exames iniciais chegaram', level: 'info',
+  since: 'AVALIAÇÃO INICIAL · 12 DIAS DE DADOS',
+  tiles: [['Índice Eixo', '61', 'linha de base', 0], ['T. total', '298', 'ng/dL · baixo', -1], ['Sono médio', '6h05', 'linha de base', 0], ['Libido', '2/5', 'check-in', -1]],
+  alertKicker: 'PRONTO PARA DECIDIR', alertTitle: 'Painel hormonal completo disponível', alertText: 'Duas coletas com testosterona baixa e sintomas compatíveis. Dados de sono e humor já cruzados para a decisão de hoje.',
+  prios: [['Check-in diário', 100], ['Dormir antes das 23h', 85], ['Registro de álcool', 92]],
+  note: 'Muito engajado, objetivo declarado: energia e libido. Treina pouco por falta de tempo, não de vontade.', noteBy: 'Marina Alves, health coach · hoje' },
+{ name: 'Bruno L.', time: '20:15', meta: '45 anos · ciclo 3 · semana 11 de 12', adh: 81, flag: 'Fechamento de ciclo', level: 'ok',
+  since: 'CICLO 3 · 77 DIAS',
+  tiles: [['Índice Eixo', '81', '+19 desde o início', 1], ['Peso', '86,4 kg', '−7,1 kg', 1], ['10 km', '54:10', '−6 min', 1], ['T. total', '588', 'ng/dL · estável', 1]],
+  alertKicker: 'PRÓXIMO CICLO', alertTitle: 'Metas do ciclo 3 cumpridas', alertText: 'Pronto para definir o ciclo 4. Objetivo declarado: meio Ironman em 38 semanas.',
+  prios: [['Treinar 4 vezes', 88], ['Proteína 140 g/dia', 76], ['Dormir 7h30', 79]],
+  note: 'Quer acelerar o treino para a prova. Recomendo avaliação de medicina do esporte antes do ciclo 4.', noteBy: 'Marina Alves, health coach · há 3 dias' }
+];
+const flagColors = { alert: ['#fbeee3', '#8a4519'], risk: ['#fbeee3', '#8a4519'], info: ['#d5e2dc', '#1f4d43'], ok: ['#e8e2d6', '#4c5a54'] };
+const sel = this.state.sel;
+const pts = P.map((p, i) => {
+const on = i === sel;
+const fc = flagColors[p.level];
+const barCol = p.adh >= 70 ? '#1f4d43' : (p.adh >= 50 ? '#b4622d' : '#b4622d');
+return {
+name: p.name, time: p.time, meta: p.meta, adh: p.adh + '%', flag: p.flag,
+pressed: on ? 'true' : 'false',
+pick: () => this.setState({ sel: i }),
+style: 'width: 100%; display: flex; flex-direction: column; gap: 8px; padding: 14px 16px; border-radius: 12px; text-align: left; cursor: pointer; color: #142420; background: ' + (on ? '#ffffff' : 'transparent') + '; border: 1px solid ' + (on ? '#1f4d43' : '#cfc6b6') + '; box-shadow: ' + (on ? '0 10px 24px -16px rgba(20,36,32,0.5)' : 'none') + ';',
+barStyle: 'display: block; height: 6px; border-radius: 999px; width: ' + p.adh + '%; background: ' + barCol + ';',
+flagStyle: 'align-self: flex-start; font-size: 12px; line-height: 16px; font-weight: 600; padding: 3px 8px; border-radius: 4px; background: ' + fc[0] + '; color: ' + fc[1] + ';'
+};
+});
+const p = P[sel];
+const ac = p.level === 'alert' || p.level === 'risk' ? ['#fbeee3', '#e9c3a3', '#8a4519'] : (p.level === 'info' ? ['#d5e2dc', '#a9cbbd', '#1f4d43'] : ['#e8e2d6', '#cfc6b6', '#142420']);
+const d = {
+name: p.name, meta: p.meta + ' · consulta ' + p.time, since: p.since,
+x_tiles: p.tiles.map((k) => ({ label: k[0], now: k[1], delta: k[2], dStyle: 'font-family: \'Geist Mono\', ui-monospace, monospace; font-size: 12px; line-height: 16px; color: ' + (k[3] > 0 ? '#2b6a4e' : (k[3] < 0 ? '#8a4519' : '#4c5a54')) + ';' })),
+alertStyle: 'display: flex; flex-direction: column; gap: 4px; padding: 12px 14px; border-radius: 10px; background: ' + ac[0] + '; border: 1px solid ' + ac[1] + '; color: ' + ac[2] + ';',
+alertKicker: p.alertKicker, alertTitle: p.alertTitle, alertText: p.alertText,
+x_prios: p.prios.map((r) => ({ name: r[0], pct: r[1] + '%', bar: 'display: block; height: 6px; border-radius: 999px; width: ' + r[1] + '%; background: ' + (r[1] >= 70 ? '#1f4d43' : '#b4622d') + ';' })),
+note: p.note, noteBy: p.noteBy
+};
+return { pts, d, tiles: d.x_tiles, prios: d.x_prios };
+}
+}
+
+return Component;
+})());
+DC.define("PaginaMedico", (function () {
+class Component extends DCLogic { renderVals() { return {}; } }
+return Component;
+})());
+DC.mount("PaginaMedico", document.getElementById('eixo-root'));
+</script>
+</body>
+</html>
